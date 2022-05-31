@@ -1,0 +1,99 @@
+﻿@model IEnumerable<Khuselo_BatteryCheck_r1.Models.KhuseloDb3>
+
+@{
+    ViewData["Title"] = "Index2";
+}
+
+<h1>Vertel</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.SerialNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Brand)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DatePurchased)
+            </th>
+            @*<th>
+                @Html.DisplayNameFor(model => model.DateExpired)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Lifespan)
+            </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.Location)
+            </th>
+            @*<th>
+                @Html.DisplayNameFor(model => model.TechName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TechCell)
+            </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.Branch)
+            </th>
+            @*<th>
+                @Html.DisplayNameFor(model => model.ChargeCycles)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateInstalled)
+            </th>*@
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+            if (item.Branch.Contains("Vert"))
+            {
+                <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.SerialNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Brand)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DatePurchased)
+            </td>
+            @*<td>
+                @Html.DisplayFor(modelItem => item.DateExpired)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Lifespan)
+            </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.Location)
+            </td>
+            @*<td>
+                @Html.DisplayFor(modelItem => item.TechName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TechCell)
+            </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.Branch)
+            </td>
+           @* <td>
+                @Html.DisplayFor(modelItem => item.ChargeCycles)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateInstalled)
+            </td>*@
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+            }
+            
+}
+    </tbody>
+</table>

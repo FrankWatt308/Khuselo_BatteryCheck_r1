@@ -1,0 +1,84 @@
+﻿@model Khuselo_BatteryCheck_r1.Models.KhuseloDb3
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>KhuseloDb3</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="SerialNumber" class="control-label"></label>
+                <input asp-for="SerialNumber" class="form-control" />
+                <span asp-validation-for="SerialNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Brand" class="control-label"></label>
+                <input asp-for="Brand" class="form-control" />
+                <span asp-validation-for="Brand" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DatePurchased" class="control-label"></label>
+                <input asp-for="DatePurchased" class="form-control" />
+                <span asp-validation-for="DatePurchased" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DateExpired" class="control-label"></label>
+                <input asp-for="DateExpired" class="form-control" />
+                <span asp-validation-for="DateExpired" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Lifespan" class="control-label"></label>
+                <input asp-for="Lifespan" class="form-control" />
+                <span asp-validation-for="Lifespan" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Location" class="control-label"></label>
+                <input asp-for="Location" class="form-control" />
+                <span asp-validation-for="Location" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TechName" class="control-label"></label>
+                <input asp-for="TechName" class="form-control" />
+                <span asp-validation-for="TechName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TechCell" class="control-label"></label>
+                <input asp-for="TechCell" class="form-control" />
+                <span asp-validation-for="TechCell" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Branch" class="control-label"></label>
+                <input asp-for="Branch" class="form-control" />
+                <span asp-validation-for="Branch" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ChargeCycles" class="control-label"></label>
+                <input asp-for="ChargeCycles" class="form-control" />
+                <span asp-validation-for="ChargeCycles" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DateInstalled" class="control-label"></label>
+                <input asp-for="DateInstalled" class="form-control" />
+                <span asp-validation-for="DateInstalled" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
