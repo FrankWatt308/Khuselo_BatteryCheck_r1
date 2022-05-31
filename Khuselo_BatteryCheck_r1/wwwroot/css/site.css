@@ -40,3 +40,15 @@ li:hover {
     background-color: dimgray;
     padding: 0px;
 }
+
+.mybtn2{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    border-bottom:solid;
+    border-bottom-width:medium;
+    border-bottom-color:orange;
+
+}
+mybtn2:hover{
+
+}
+
