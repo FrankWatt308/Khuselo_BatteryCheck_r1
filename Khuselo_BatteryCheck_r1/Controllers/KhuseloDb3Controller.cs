@@ -6,11 +6,14 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Khuselo_BatteryCheck_r1.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Khuselo_BatteryCheck_r1.Controllers
 {
+    [Authorize]
     public class KhuseloDb3Controller : Controller
     {
+
         private readonly Khuselo_3Context _context;
 
         public KhuseloDb3Controller(Khuselo_3Context context)
