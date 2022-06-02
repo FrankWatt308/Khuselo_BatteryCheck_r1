@@ -4,7 +4,7 @@
     ViewData["Title"] = "Index";
 }
 
-<h1 class="mybtn2">Televonic</h1>
+<h1 class="mybtn2">Khuselo Group</h1>
 
 <p>
     <a asp-action="Create">Create New</a>
@@ -36,9 +36,9 @@
             <th>
                 @Html.DisplayNameFor(model => model.TechCell)
             </th>*@
-            <th>
+           @* <th>
                 @Html.DisplayNameFor(model => model.Branch)
-            </th>
+            </th>*@
             @*<th>
                 @Html.DisplayNameFor(model => model.ChargeCycles)
             </th>
@@ -50,9 +50,7 @@
     </thead>
     <tbody>
 @foreach (var item in Model) {
-            if (item.Branch.Contains("Tel"))
-            {
-                <tr>
+            <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.SerialNumber)
             </td>
@@ -77,9 +75,9 @@
             <td>
                 @Html.DisplayFor(modelItem => item.TechCell)
             </td>*@
-            <td>
+           @* <td>
                 @Html.DisplayFor(modelItem => item.Branch)
-            </td>
+            </td>*@
            @* <td>
                 @Html.DisplayFor(modelItem => item.ChargeCycles)
             </td>
@@ -92,7 +90,6 @@
                 <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
             </td>
         </tr>
-            }
             
 }
     </tbody>

@@ -40,7 +40,7 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=KhuseloDb3}/{action=Index4}/{id?}");
+    pattern: "{controller=KhuseloDb3}/{action=Index}/{id?}");
 app.MapRazorPages();
 
 app.Run();

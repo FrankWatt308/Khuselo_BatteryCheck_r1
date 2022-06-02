@@ -4,7 +4,7 @@
     ViewData["Title"] = "Index4";
 }
 
-<h1 class="mybtn2">Khuselo Group</h1>
+<h1 class="mybtn2">Televonic</h1>
 
 <p>
     <a asp-action="Create">Create New</a>
@@ -50,7 +50,9 @@
     </thead>
     <tbody>
 @foreach (var item in Model) {
-            <tr>
+            if (item.Branch.Contains("Tel"))
+            {
+                <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.SerialNumber)
             </td>
@@ -90,6 +92,7 @@
                 <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
             </td>
         </tr>
+            }
             
 }
     </tbody>
