@@ -20,7 +20,7 @@ body {
 .underlineKhuselo1 {
     font-size: x-large;
     border-bottom-color: orange;
-    border-bottom-width: thin;
+    border-bottom-width: 5px;
     border-bottom: double;
     
 }
