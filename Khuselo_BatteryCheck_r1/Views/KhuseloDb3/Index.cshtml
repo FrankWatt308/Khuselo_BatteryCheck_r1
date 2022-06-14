@@ -1,10 +1,50 @@
 ﻿@model IEnumerable<Khuselo_BatteryCheck_r1.Models.KhuseloDb3>
-
+@using Khuselo_BatteryCheck_r1.Controllers;
 @{
     ViewData["Title"] = "Index";
 }
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Search by :</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarColor03">
+      <ul class="navbar-nav me-auto">
+       
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" style="font-size:large"></a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item">ID</a>
+            <a class="dropdown-item" href="#">Serial Number</a>
+            <a class="dropdown-item" href="#">Brand</a>
+             <a class="dropdown-item" href="#">Date Purchased</a>
+              <a class="dropdown-item" href="#">Location</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Show all</a>
+          </div>
+        </li>
+      </ul>
+      <form method="get" asp-action="Index" >
+    <p>
+        <input type="search" placeholder="Search by Id" value="@ViewData["GetSearch"]" name="searchString" style="width:200px; border-width:thin;border-color:dimgray;border-style:groove; padding:5px"/>
+        <input type="submit" value="Search" class=" btn btn-primary "/>
+        <a asp-action="index" style="color:black">Reset </a>
+    </p>
+
+</form>
+     @* <form class="d-flex">
+        <input class="form-control me-sm-2" type="text" placeholder="Search">
+        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+      </form>*@
+    </div>
+  </div>
+</nav>
 
 <h1 class="mybtn2">Khuselo</h1>
+
+
 
 <p>
     <a asp-action="Create">Create New</a>
@@ -12,6 +52,9 @@
 <table class="table">
     <thead>
         <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
             <th>
                 @Html.DisplayNameFor(model => model.SerialNumber)
             </th>
@@ -51,6 +94,9 @@
     <tbody>
 @foreach (var item in Model) {
             <tr>
+                <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
             <td>
                 @Html.DisplayFor(modelItem => item.SerialNumber)
             </td>
@@ -90,7 +136,10 @@
                 <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
             </td>
         </tr>
+
             
 }
     </tbody>
+    
 </table>
+<p>No futher records</p>

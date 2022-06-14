@@ -1,11 +1,15 @@
 ﻿using Khuselo_BatteryCheck_r1.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
+
 namespace Khuselo_BatteryCheck_r1.Controllers
 {
+    [Authorize]
     public class HomeController : Controller
     {
+       
         private readonly ILogger<HomeController> _logger;
 
         public HomeController(ILogger<HomeController> logger)
