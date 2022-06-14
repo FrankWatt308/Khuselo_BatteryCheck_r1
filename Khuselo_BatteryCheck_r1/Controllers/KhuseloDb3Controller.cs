@@ -21,33 +21,96 @@ namespace Khuselo_BatteryCheck_r1.Controllers
             _context = context;
         }
 
+        public bool isID = false;
+        public bool isSerial = false;
+        public bool isBrand = false;
+        public bool isDatePurchased = false;
+        public bool isLocation = false;
+
+        public bool isTelevonic = false;
+        public bool isVertel = false;
+        public bool isElecta = false;
+
+        
+
+
+
+
         // GET: KhuseloDb3
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string searchString)
         {
-              return _context.KhuseloDb3s != null ? 
-                          View(await _context.KhuseloDb3s.ToListAsync()) :
-                          Problem("Entity set 'Khuselo_3Context.KhuseloDb3s'  is null.");
+            ViewData["GetSearch"] = searchString;
+            var searQuery = from x in _context.KhuseloDb3s select x;
+            if (!(string.IsNullOrEmpty(searchString) ))
+            {
+
+                searQuery = (searQuery.Where(x => x.Id.Equals(Convert.ToInt32(searchString))));
+                return View(await searQuery.AsNoTracking().ToListAsync());
+            }
+
+            else
+            {
+                return _context.KhuseloDb3s != null ?
+            View(await _context.KhuseloDb3s.ToListAsync()) :
+            Problem("Entity set 'Khuselo_3Context.KhuseloDb4s'  is null.");
+            }
         }
 
-        public async Task<IActionResult> Index2()
+        public async Task<IActionResult> Index2(string searchString)
         {
-            return _context.KhuseloDb3s != null ?
-                        View(await _context.KhuseloDb3s.ToListAsync()) :
-                        Problem("Entity set 'Khuselo_3Context.KhuseloDb3s'  is null.");
+            ViewData["GetSearch"] = searchString;
+            var searQuery = from x in _context.KhuseloDb3s select x;
+            if (!(string.IsNullOrEmpty(searchString)))
+            {
+
+                searQuery = (searQuery.Where(x => x.Id.Equals(Convert.ToInt32(searchString))));
+                return View(await searQuery.AsNoTracking().ToListAsync());
+            }
+
+            else
+            {
+                return _context.KhuseloDb3s != null ?
+            View(await _context.KhuseloDb3s.ToListAsync()) :
+            Problem("Entity set 'Khuselo_3Context.KhuseloDb4s'  is null.");
+            }
         }
 
-        public async Task<IActionResult> Index3()
+        public async Task<IActionResult> Index3(string searchString)
         {
-            return _context.KhuseloDb3s != null ?
-                        View(await _context.KhuseloDb3s.ToListAsync()) :
-                        Problem("Entity set 'Khuselo_3Context.KhuseloDb3s'  is null.");
+            ViewData["GetSearch"] = searchString;
+            var searQuery = from x in _context.KhuseloDb3s select x;
+            if (!(string.IsNullOrEmpty(searchString)))
+            {
+
+                searQuery = (searQuery.Where(x => x.Id.Equals(Convert.ToInt32(searchString))));
+                return View(await searQuery.AsNoTracking().ToListAsync());
+            }
+
+            else
+            {
+                return _context.KhuseloDb3s != null ?
+            View(await _context.KhuseloDb3s.ToListAsync()) :
+            Problem("Entity set 'Khuselo_3Context.KhuseloDb4s'  is null.");
+            }
         }
 
-        public async Task<IActionResult> Index4()
+        public async Task<IActionResult> Index4(string searchString)
         {
-            return _context.KhuseloDb3s != null ?
-                        View(await _context.KhuseloDb3s.ToListAsync()) :
-                        Problem("Entity set 'Khuselo_3Context.KhuseloDb3s'  is null.");
+            ViewData["GetSearch"] = searchString;
+            var searQuery = from x in _context.KhuseloDb3s select x;
+            if (!(string.IsNullOrEmpty(searchString)))
+            {
+
+                searQuery = (searQuery.Where(x => x.Id.Equals(Convert.ToInt32(searchString))));
+                return View(await searQuery.AsNoTracking().ToListAsync());
+            }
+
+            else
+            {
+                return _context.KhuseloDb3s != null ?
+            View(await _context.KhuseloDb3s.ToListAsync()) :
+            Problem("Entity set 'Khuselo_3Context.KhuseloDb4s'  is null.");
+            }
         }
 
         // GET: KhuseloDb3/Details/5
