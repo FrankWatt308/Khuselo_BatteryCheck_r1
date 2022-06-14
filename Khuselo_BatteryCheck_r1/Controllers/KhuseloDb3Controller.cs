@@ -33,7 +33,7 @@ namespace Khuselo_BatteryCheck_r1.Controllers
 
         
 
-
+        
 
 
         // GET: KhuseloDb3
@@ -41,12 +41,22 @@ namespace Khuselo_BatteryCheck_r1.Controllers
         {
             ViewData["GetSearch"] = searchString;
             var searQuery = from x in _context.KhuseloDb3s select x;
-            if (!(string.IsNullOrEmpty(searchString) ))
+            if (!(string.IsNullOrEmpty(searchString)))
             {
 
                 searQuery = (searQuery.Where(x => x.Id.Equals(Convert.ToInt32(searchString))));
                 return View(await searQuery.AsNoTracking().ToListAsync());
             }
+            //if (isSerial)
+            //{
+            //    searQuery = (searQuery.Where(x => x.SerialNumber.Equals(Convert.ToInt32(searchString))));
+            //    return View(await searQuery.AsNoTracking().ToListAsync());
+            //}
+            //if (isBrand)
+            //{
+            //    searQuery = searQuery.Where(x => x.Brand.Equals(searchString));
+            //    return View(await searQuery.AsNoTracking().ToListAsync());
+            //}
 
             else
             {
