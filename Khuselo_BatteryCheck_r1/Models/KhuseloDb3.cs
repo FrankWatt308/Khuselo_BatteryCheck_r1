@@ -6,8 +6,8 @@ namespace Khuselo_BatteryCheck_r1.Models
     public partial class KhuseloDb3
     {
         public int Id { get; set; }
-        public string SerialNumber { get; set; } = null!;
-        public string Brand { get; set; } = null!;
+        public string? SerialNumber { get; set; } 
+        public string? Brand { get; set; } 
         public DateTime DatePurchased { get; set; }
         public DateTime? DateExpired { get; set; }
         public string? Lifespan { get; set; }

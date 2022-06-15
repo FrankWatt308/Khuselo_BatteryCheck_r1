@@ -21,8 +21,15 @@ body {
     font-size: x-large;
     border-bottom-color: orange;
     border-bottom-width: 5px;
-    border-bottom: double;
-    
+    border-bottom: double;    
+    border-bottom-width: thick;
+   
+}
+underlineKhuselo1:hover {
+    border-bottom-width: 0px;
+    border-width: 0px;
+    border-bottom: hidden ;
+    transition-duration:1s;
 }
 
 .mybtn1 {
@@ -33,22 +40,34 @@ mybtn1:hover{
     border-radius:10px;
     background-color:dimgray;
     padding:5px;
+    
 }
 
 li:hover {
     border-radius: 10px;
     background-color: dimgray;
-    padding: 0px;
+    padding: 0px;    
+    border-bottom-width: 0px;
+    border-bottom: hidden;
+    transition-duration: 2s;
 }
 
-.mybtn2{
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    border-bottom:solid;
-    border-bottom-width:medium;
-    border-bottom-color:orange;
+.mybtn2 {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    border-bottom: solid;
+    border-bottom-width: medium;
+    border-bottom-color: orange;
+    
+}
+mybtn2:hover {
+}
+
+input:hover {
+background-color:orange;
+transition-duration:3s;
 
 }
-mybtn2:hover{
-
+tr:hover {
+background-color:orange;
+transition-duration:2s;
 }
-

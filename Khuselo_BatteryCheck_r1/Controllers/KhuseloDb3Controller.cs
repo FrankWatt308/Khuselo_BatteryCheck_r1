@@ -37,26 +37,28 @@ namespace Khuselo_BatteryCheck_r1.Controllers
 
 
         // GET: KhuseloDb3
-        public async Task<IActionResult> Index(string searchString)
+        public async Task<IActionResult> Index(string searchString, string searchStringLocation,string searchStringSerial)
         {
             ViewData["GetSearch"] = searchString;
+            ViewData["GetSearch2"] = searchStringLocation;
+            ViewData["GetSearch3"] = searchStringSerial;
             var searQuery = from x in _context.KhuseloDb3s select x;
-            if (!(string.IsNullOrEmpty(searchString)))
+            if (!(string.IsNullOrEmpty(searchString)) && (string.IsNullOrEmpty(searchStringSerial)&& (string.IsNullOrEmpty(searchStringLocation))))
             {
 
-                searQuery = (searQuery.Where(x => x.Id.Equals(Convert.ToInt32(searchString))));
+                searQuery = (searQuery.Where(x => x.Id.Equals(Convert.ToInt32( searchString))));
                 return View(await searQuery.AsNoTracking().ToListAsync());
             }
-            //if (isSerial)
-            //{
-            //    searQuery = (searQuery.Where(x => x.SerialNumber.Equals(Convert.ToInt32(searchString))));
-            //    return View(await searQuery.AsNoTracking().ToListAsync());
-            //}
-            //if (isBrand)
-            //{
-            //    searQuery = searQuery.Where(x => x.Brand.Equals(searchString));
-            //    return View(await searQuery.AsNoTracking().ToListAsync());
-            //}
+            if (!(string.IsNullOrEmpty(searchStringSerial)) && (string.IsNullOrEmpty(searchString)) && (string.IsNullOrEmpty(searchStringLocation)))
+            {
+                searQuery = (searQuery.Where(x => x.SerialNumber.Contains(searchStringSerial)));
+                return View(await searQuery.AsNoTracking().ToListAsync());
+            }
+            if (!(string.IsNullOrEmpty(searchStringLocation))&& (string.IsNullOrEmpty(searchStringSerial)&& (string.IsNullOrEmpty(searchString))))
+            {
+                searQuery = (searQuery.Where(x => x.Location.Contains(searchStringLocation)));
+                return View(await searQuery.AsNoTracking().ToListAsync());
+            }
 
             else
             {

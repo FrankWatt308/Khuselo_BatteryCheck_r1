@@ -3,6 +3,8 @@
 @{
     ViewData["Title"] = "Index4";
 }
+<h1 class="mybtn2">Televonic</h1>
+
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">Search by :</a>
@@ -11,41 +13,51 @@
     </button>
 
     <div class="collapse navbar-collapse" id="navbarColor03">
-      <ul class="navbar-nav me-auto">
-       
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" style="font-size:large"></a>
-          <div class="dropdown-menu">
-            <a class="dropdown-item" onclick="()">ID</a>
-            <a class="dropdown-item" href="#">Serial Number</a>
-            <a class="dropdown-item" href="#">Brand</a>
-             <a class="dropdown-item" href="#">Date Purchased</a>
-              <a class="dropdown-item" href="#">Location</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Show all</a>
-          </div>
-        </li>
-      </ul>
-      <form method="get" asp-action="Index4" >
-    <p>
-        <input type="search" placeholder="Search by Id" value="@ViewData["GetSearch"]" name="searchString" style="width:200px; border-width:thin;border-color:dimgray;border-style:groove; padding:5px"/>
-        <input type="submit" value="Search" class=" btn btn-primary "/>
-        <a asp-action="index4" style="color:black">Reset </a>
-    </p>
+        <ul class="navbar-nav me-auto">
 
-</form>
-     @* <form class="d-flex">
-        <input class="form-control me-sm-2" type="text" placeholder="Search">
-        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-      </form>*@
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" style="font-size:large"></a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" onclick="()">ID</a>
+                    <a class="dropdown-item" href="#">Serial Number</a>
+                    <a class="dropdown-item" href="#">Brand</a>
+                    <a class="dropdown-item" href="#">Date Purchased</a>
+                    <a class="dropdown-item" href="#">Location</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Show all</a>
+                </div>
+            </li>
+        </ul>
+        <form method="get" asp-action="Index">
+            <input type="search" placeholder="Search by Location" value="@ViewData["GetSearch2"]" name="searchStringLocation" style="width:200px; border-width:thin;border-color:dimgray;border-style:groove; padding:5px" />
+            <input type="submit" value="Search" class=" btn btn-primary " />
+
+
+        </form>
+        <form method="get" asp-action="Index">
+            <input type="search" placeholder="Search by Serial number" value="@ViewData["GetSearch3"]" name="searchStringSerial" style="width:200px; border-width:thin;border-color:dimgray;border-style:groove; padding:5px" />
+            <input type="submit" value="Search" class=" btn btn-primary " />
+
+
+        </form>
+        <form method="get" asp-action="Index">
+            <input type="search" placeholder="Search by Id" value="@ViewData["GetSearch"]" name="searchString" style="width:200px; border-width:thin;border-color:dimgray;border-style:groove; padding:5px" />
+            <input type="submit" value="Search" class=" btn btn-primary " />
+            <a asp-action="index3" style="color:black">Reset </a>
+
+        </form>
+        @* <form class="d-flex">
+          <input class="form-control me-sm-2" type="text" placeholder="Search">
+          <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+        </form>*@
     </div>
   </div>
 </nav>
 
-<h1 class="mybtn2">Televonic</h1>
+
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create" style="font-size:large;">Create New</a>
 </p>
 <table class="table">
     <thead>

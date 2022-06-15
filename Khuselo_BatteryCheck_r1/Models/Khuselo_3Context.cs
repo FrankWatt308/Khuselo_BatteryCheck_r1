@@ -52,6 +52,7 @@ namespace Khuselo_BatteryCheck_r1.Models
                 entity.Property(e => e.Lifespan)
                     .HasMaxLength(50)
                     .IsUnicode(false);
+                    
 
                 entity.Property(e => e.Location)
                     .HasMaxLength(150)
