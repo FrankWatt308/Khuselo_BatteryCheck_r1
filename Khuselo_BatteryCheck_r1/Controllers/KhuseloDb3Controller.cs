@@ -236,7 +236,7 @@ namespace Khuselo_BatteryCheck_r1.Controllers
 
         // POST: KhuseloDb3/Delete/5
         [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
+        //[ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             if (_context.KhuseloDb3s == null)

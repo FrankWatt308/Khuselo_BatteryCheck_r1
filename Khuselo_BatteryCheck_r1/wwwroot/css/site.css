@@ -71,3 +71,10 @@ tr:hover {
 background-color:orange;
 transition-duration:2s;
 }
+
+a:hover {
+padding:10px;
+background-color:whitesmoke;
+transition-duration:1s;
+
+}
