@@ -19,17 +19,25 @@ body {
 
 .underlineKhuselo1 {
     font-size: x-large;
-    border-bottom-color: orange;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif border-bottom-color: orange;
+    color:black;
     border-bottom-width: 5px;
-    border-bottom: double;    
+    border-bottom: double;
+    border-bottom-color:orange;
+    padding:5px;
+    padding-left:10px;
+    padding-right:10px;
     border-bottom-width: thick;
-   
+    border-bottom-style: double;
+    transition-duration: 2s;
 }
 underlineKhuselo1:hover {
+    background-color: dimgray;
     border-bottom-width: 0px;
-    border-width: 0px;
-    border-bottom: hidden ;
-    transition-duration:1s;
+    border-radius: 20px;
+    padding :5px;
+    border-bottom:hidden;
+    transition-duration: 2s;
 }
 
 .mybtn1 {
@@ -42,15 +50,18 @@ mybtn1:hover{
     padding:5px;
     
 }
+.li {
+transition-duration:2s;
+}
 
-li:hover {
+/*li:hover {
     border-radius: 10px;
     background-color: dimgray;
     padding: 0px;    
     border-bottom-width: 0px;
     border-bottom: hidden;
-    transition-duration: 2s;
-}
+    transition-duration: 2s;*/
+
 
 .mybtn2 {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -60,6 +71,7 @@ li:hover {
     
 }
 mybtn2:hover {
+    
 }
 
 input:hover {
@@ -74,7 +86,16 @@ transition-duration:2s;
 
 a:hover {
 padding:10px;
-background-color:whitesmoke;
+border-radius:10px;
+background-color:dimgray;
 transition-duration:1s;
 
+
+}
+.a {
+transition-duration:2s;
+}
+.ul {
+/*background-color:dimgray;*/
+transition-duration:2s;
 }
