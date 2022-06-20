@@ -6,52 +6,52 @@
 <h1 class="mybtn2">Televonic</h1>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">Search by :</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Search by :</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-    <div class="collapse navbar-collapse" id="navbarColor03">
-        <ul class="navbar-nav me-auto">
+        <div class="collapse navbar-collapse" id="navbarColor03">
+            <ul class="navbar-nav me-auto">
 
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" style="font-size:large"></a>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" onclick="()">ID</a>
-                    <a class="dropdown-item" href="#">Serial Number</a>
-                    <a class="dropdown-item" href="#">Brand</a>
-                    <a class="dropdown-item" href="#">Date Purchased</a>
-                    <a class="dropdown-item" href="#">Location</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Show all</a>
-                </div>
-            </li>
-        </ul>
-        <form method="get" asp-action="Index">
-            <input type="search" placeholder="Search by Location" value="@ViewData["GetSearch2"]" name="searchStringLocation" style="width:200px; border-width:thin;border-color:dimgray;border-style:groove; padding:5px" />
-            <input type="submit" value="Search" class=" btn btn-primary " />
-
-
-        </form>
-        <form method="get" asp-action="Index">
-            <input type="search" placeholder="Search by Serial number" value="@ViewData["GetSearch3"]" name="searchStringSerial" style="width:200px; border-width:thin;border-color:dimgray;border-style:groove; padding:5px" />
-            <input type="submit" value="Search" class=" btn btn-primary " />
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" style="font-size:large"></a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" onclick="()">ID</a>
+                        <a class="dropdown-item" href="#">Serial Number</a>
+                        <a class="dropdown-item" href="#">Brand</a>
+                        <a class="dropdown-item" href="#">Date Purchased</a>
+                        <a class="dropdown-item" href="#">Location</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Show all</a>
+                    </div>
+                </li>
+            </ul>
+            <form method="get" asp-action="Index4">
+                <input type="search" placeholder="Search by Location" value="@ViewData["GetSearch2"]" name="searchStringLocation" style="width:200px; border-width:thin;border-color:dimgray;border-style:groove; padding:5px" />
+                <input type="submit" value="Search" class=" btn btn-primary " />
 
 
-        </form>
-        <form method="get" asp-action="Index">
-            <input type="search" placeholder="Search by Id" value="@ViewData["GetSearch"]" name="searchString" style="width:200px; border-width:thin;border-color:dimgray;border-style:groove; padding:5px" />
-            <input type="submit" value="Search" class=" btn btn-primary " />
-            <a asp-action="index3" style="color:black">Reset </a>
+            </form>
+            <form method="get" asp-action="Index4">
+                <input type="search" placeholder="Search by Serial number" value="@ViewData["GetSearch3"]" name="searchStringSerial" style="width:200px; border-width:thin;border-color:dimgray;border-style:groove; padding:5px" />
+                <input type="submit" value="Search" class=" btn btn-primary " />
 
-        </form>
-        @* <form class="d-flex">
-          <input class="form-control me-sm-2" type="text" placeholder="Search">
-          <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-        </form>*@
+
+            </form>
+            <form method="get" asp-action="Index4">
+                <input type="search" placeholder="Search by Id" value="@ViewData["GetSearch"]" name="searchString" style="width:200px; border-width:thin;border-color:dimgray;border-style:groove; padding:5px" />
+                <input type="submit" value="Search" class=" btn btn-primary " />
+                <a asp-action="index4" style="color:black">Reset </a>
+
+            </form>
+            @* <form class="d-flex">
+                <input class="form-control me-sm-2" type="text" placeholder="Search">
+                <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+                </form>*@
+        </div>
     </div>
-  </div>
 </nav>
 
 
@@ -76,81 +76,81 @@
             </th>
             @*<th>
                 @Html.DisplayNameFor(model => model.DateExpired)
-            </th>
-            <th>
+                </th>
+                <th>
                 @Html.DisplayNameFor(model => model.Lifespan)
-            </th>*@
+                </th>*@
             <th>
                 @Html.DisplayNameFor(model => model.Location)
             </th>
             @*<th>
                 @Html.DisplayNameFor(model => model.TechName)
-            </th>
-            <th>
+                </th>
+                <th>
                 @Html.DisplayNameFor(model => model.TechCell)
-            </th>*@
+                </th>*@
             <th>
                 @Html.DisplayNameFor(model => model.Branch)
             </th>
             @*<th>
                 @Html.DisplayNameFor(model => model.ChargeCycles)
-            </th>
-            <th>
+                </th>
+                <th>
                 @Html.DisplayNameFor(model => model.DateInstalled)
-            </th>*@
+                </th>*@
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-            if (item.Branch.Contains("Tel"))
-            {
+        @foreach (var item in Model)
+        {
+            
                 <tr>
                     <td>
-                @Html.DisplayFor(modelItem => item.Id)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.SerialNumber)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Brand)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DatePurchased)
-            </td>
-            @*<td>
-                @Html.DisplayFor(modelItem => item.DateExpired)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Lifespan)
-            </td>*@
-            <td>
-                @Html.DisplayFor(modelItem => item.Location)
-            </td>
-            @*<td>
-                @Html.DisplayFor(modelItem => item.TechName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TechCell)
-            </td>*@
-            <td>
-                @Html.DisplayFor(modelItem => item.Branch)
-            </td>
-           @* <td>
-                @Html.DisplayFor(modelItem => item.ChargeCycles)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DateInstalled)
-            </td>*@
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id"style="transition-duration: 1s;">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id"style="transition-duration: 1s;">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id"style="transition-duration: 1s;">Delete</a>
-            </td>
-        </tr>
-            }
+                        @Html.DisplayFor(modelItem => item.Id)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SerialNumber)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Brand)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DatePurchased)
+                    </td>
+                    @*<td>
+                        @Html.DisplayFor(modelItem => item.DateExpired)
+                        </td>
+                        <td>
+                        @Html.DisplayFor(modelItem => item.Lifespan)
+                        </td>*@
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Location)
+                    </td>
+                    @*<td>
+                        @Html.DisplayFor(modelItem => item.TechName)
+                        </td>
+                        <td>
+                        @Html.DisplayFor(modelItem => item.TechCell)
+                        </td>*@
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Branch)
+                    </td>
+                    @* <td>
+                        @Html.DisplayFor(modelItem => item.ChargeCycles)
+                        </td>
+                        <td>
+                        @Html.DisplayFor(modelItem => item.DateInstalled)
+                        </td>*@
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.Id" style="transition-duration: 1s;">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@item.Id" style="transition-duration: 1s;">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@item.Id" style="transition-duration: 1s;">Delete</a>
+                    </td>
+                </tr>
             
-}
+
+        }
     </tbody>
 </table>
 <p>No futher records</p>

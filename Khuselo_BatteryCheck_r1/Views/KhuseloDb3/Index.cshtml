@@ -27,19 +27,20 @@
                 </div>
             </li>
         </ul>
-        <form method="get" asp-action="Index">
+        <form method="get" asp-action="Index"style="padding-right:20px">
             <input type="search" placeholder="Search by Location" value="@ViewData["GetSearch2"]" name="searchStringLocation" style="width:200px; border-width:thin;border-color:dimgray;border-style:groove; padding:5px" />
-            <input type="submit" value="Search" class=" btn btn-primary " />
+            <input type="submit" value="Search" class=" btn btn-primary  " />
            
 
         </form>
-        <form method="get" asp-action="Index">
+        
+        <form method="get" asp-action="Index"style="padding-right:20px">
             <input type="search" placeholder="Search by Serial number" value="@ViewData["GetSearch3"]" name="searchStringSerial" style="width:200px; border-width:thin;border-color:dimgray;border-style:groove; padding:5px" />
             <input type="submit" value="Search" class=" btn btn-primary " />
            
 
         </form>
-        <form method="get" asp-action="Index">
+        <form method="get" asp-action="Index"style="padding-right:20px">
             <input type="search" placeholder="Search by Id" value="@ViewData["GetSearch"]" name="searchString" style="width:200px; border-width:thin;border-color:dimgray;border-style:groove; padding:5px" />
             <input type="submit" value="Search" class=" btn btn-primary " />
             <a asp-action="index" style="color:black">Reset </a>
@@ -140,9 +141,9 @@
                 @Html.DisplayFor(modelItem => item.DateInstalled)
             </td>*@
             <td>
-                <a asp-action="Edit" asp-route-id="@item.Id" style="transition-duration: 1s;">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id" style="transition-duration: 1s;">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id" style="transition-duration: 1s;">Delete</a>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id" >Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id" >Delete</a>
             </td>
         </tr>
 

@@ -68,60 +68,93 @@ namespace Khuselo_BatteryCheck_r1.Controllers
             }
         }
 
-        public async Task<IActionResult> Index2(string searchString)
+        public async Task<IActionResult> Index2(string searchString, string searchStringLocation, string searchStringSerial)
         {
             ViewData["GetSearch"] = searchString;
+            ViewData["GetSearch2"] = searchStringLocation;
+            ViewData["GetSearch3"] = searchStringSerial;
             var searQuery = from x in _context.KhuseloDb3s select x;
-            if (!(string.IsNullOrEmpty(searchString)))
+            if (!(string.IsNullOrEmpty(searchString)) && (string.IsNullOrEmpty(searchStringSerial) && (string.IsNullOrEmpty(searchStringLocation))))
             {
 
-                searQuery = (searQuery.Where(x => x.Id.Equals(Convert.ToInt32(searchString))));
+                searQuery = (searQuery.Where(x => x.Id.Equals(Convert.ToInt32(searchString)) && x.Branch.Contains("Vertel")));
+                return View(await searQuery.AsNoTracking().ToListAsync());
+            }
+            if (!(string.IsNullOrEmpty(searchStringSerial)) && (string.IsNullOrEmpty(searchString)) && (string.IsNullOrEmpty(searchStringLocation)))
+            {
+                searQuery = (searQuery.Where(x => x.SerialNumber.Contains(searchStringSerial) && x.Branch.Contains("Vertel")));
+                return View(await searQuery.AsNoTracking().ToListAsync());
+            }
+            if (!(string.IsNullOrEmpty(searchStringLocation)) && (string.IsNullOrEmpty(searchStringSerial) && (string.IsNullOrEmpty(searchString))))
+            {
+                searQuery = (searQuery.Where(x => x.Location.Contains(searchStringLocation) && x.Branch.Contains("Vertel")));
                 return View(await searQuery.AsNoTracking().ToListAsync());
             }
 
             else
             {
-                return _context.KhuseloDb3s != null ?
-            View(await _context.KhuseloDb3s.ToListAsync()) :
-            Problem("Entity set 'Khuselo_3Context.KhuseloDb4s'  is null.");
+                searQuery = (searQuery.Where(x => x.Branch.Contains("vertel")));
+                return View(await searQuery.AsNoTracking().ToListAsync());
             }
         }
 
-        public async Task<IActionResult> Index3(string searchString)
+        public async Task<IActionResult> Index3(string searchString, string searchStringLocation,string searchStringSerial)
         {
             ViewData["GetSearch"] = searchString;
+            ViewData["GetSearch2"] = searchStringLocation;
+            ViewData["GetSearch3"] = searchStringSerial;
             var searQuery = from x in _context.KhuseloDb3s select x;
-            if (!(string.IsNullOrEmpty(searchString)))
+            if (!(string.IsNullOrEmpty(searchString)) && (string.IsNullOrEmpty(searchStringSerial) && (string.IsNullOrEmpty(searchStringLocation))))
             {
 
-                searQuery = (searQuery.Where(x => x.Id.Equals(Convert.ToInt32(searchString))));
+                searQuery = (searQuery.Where(x => x.Id.Equals(Convert.ToInt32(searchString)) && x.Branch.Contains("Electra")));
+                return View(await searQuery.AsNoTracking().ToListAsync());
+            }
+            if (!(string.IsNullOrEmpty(searchStringSerial)) && (string.IsNullOrEmpty(searchString)) && (string.IsNullOrEmpty(searchStringLocation)))
+            {
+                searQuery = (searQuery.Where(x => x.SerialNumber.Contains(searchStringSerial) && x.Branch.Contains("Electra")));
+                return View(await searQuery.AsNoTracking().ToListAsync());
+            }
+            if (!(string.IsNullOrEmpty(searchStringLocation)) && (string.IsNullOrEmpty(searchStringSerial) && (string.IsNullOrEmpty(searchString))))
+            {
+                searQuery = (searQuery.Where(x => x.Location.Contains(searchStringLocation) && x.Branch.Contains("Electra")));
                 return View(await searQuery.AsNoTracking().ToListAsync());
             }
 
             else
             {
-                return _context.KhuseloDb3s != null ?
-            View(await _context.KhuseloDb3s.ToListAsync()) :
-            Problem("Entity set 'Khuselo_3Context.KhuseloDb4s'  is null.");
+                searQuery = (searQuery.Where(x => x.Branch.Contains("Electra")));
+                return View(await searQuery.AsNoTracking().ToListAsync());
             }
         }
 
-        public async Task<IActionResult> Index4(string searchString)
+        public async Task<IActionResult> Index4(string searchString, string searchStringLocation,string searchStringSerial)
         {
             ViewData["GetSearch"] = searchString;
+            ViewData["GetSearch2"] = searchStringLocation;
+            ViewData["GetSearch3"] = searchStringSerial;
             var searQuery = from x in _context.KhuseloDb3s select x;
-            if (!(string.IsNullOrEmpty(searchString)))
+            if (!(string.IsNullOrEmpty(searchString)) && (string.IsNullOrEmpty(searchStringSerial) && (string.IsNullOrEmpty(searchStringLocation))))
             {
 
-                searQuery = (searQuery.Where(x => x.Id.Equals(Convert.ToInt32(searchString))));
+                searQuery = (searQuery.Where(x => x.Id.Equals(Convert.ToInt32(searchString)) && x.Branch.Contains("Televonic")));
+                return View(await searQuery.AsNoTracking().ToListAsync());
+            }
+            if (!(string.IsNullOrEmpty(searchStringSerial)) && (string.IsNullOrEmpty(searchString)) && (string.IsNullOrEmpty(searchStringLocation)))
+            {
+                searQuery = (searQuery.Where(x => x.SerialNumber.Contains(searchStringSerial) && x.Branch.Contains("Televonic")));
+                return View(await searQuery.AsNoTracking().ToListAsync());
+            }
+            if (!(string.IsNullOrEmpty(searchStringLocation)) && (string.IsNullOrEmpty(searchStringSerial) && (string.IsNullOrEmpty(searchString))))
+            {
+                searQuery = (searQuery.Where(x => x.Location.Contains(searchStringLocation) && x.Branch.Contains("Televonic")));
                 return View(await searQuery.AsNoTracking().ToListAsync());
             }
 
             else
             {
-                return _context.KhuseloDb3s != null ?
-            View(await _context.KhuseloDb3s.ToListAsync()) :
-            Problem("Entity set 'Khuselo_3Context.KhuseloDb4s'  is null.");
+                searQuery = (searQuery.Where(x => x.Branch.Contains("televonic")));
+                return View(await searQuery.AsNoTracking().ToListAsync());
             }
         }
 

@@ -28,19 +28,19 @@
                 </div>
             </li>
         </ul>
-        <form method="get" asp-action="Index">
+        <form method="get" asp-action="Index3">
             <input type="search" placeholder="Search by Location" value="@ViewData["GetSearch2"]" name="searchStringLocation" style="width:200px; border-width:thin;border-color:dimgray;border-style:groove; padding:5px" />
             <input type="submit" value="Search" class=" btn btn-primary " />
 
 
         </form>
-        <form method="get" asp-action="Index">
+        <form method="get" asp-action="Index3">
             <input type="search" placeholder="Search by Serial number" value="@ViewData["GetSearch3"]" name="searchStringSerial" style="width:200px; border-width:thin;border-color:dimgray;border-style:groove; padding:5px" />
             <input type="submit" value="Search" class=" btn btn-primary " />
 
 
         </form>
-        <form method="get" asp-action="Index">
+        <form method="get" asp-action="Index3">
             <input type="search" placeholder="Search by Id" value="@ViewData["GetSearch"]" name="searchString" style="width:200px; border-width:thin;border-color:dimgray;border-style:groove; padding:5px" />
             <input type="submit" value="Search" class=" btn btn-primary " />
             <a asp-action="index3" style="color:black">Reset </a>
@@ -103,8 +103,7 @@
     </thead>
     <tbody>
 @foreach (var item in Model) {
-            if (item.Branch.Contains("Electra"))
-            {
+            
                 <tr>
                      <td>
                 @Html.DisplayFor(modelItem => item.Id)
@@ -148,7 +147,7 @@
                 <a asp-action="Delete" asp-route-id="@item.Id"style="transition-duration: 1s;">Delete</a>
             </td>
         </tr>
-            }
+            
             
 }
     </tbody>

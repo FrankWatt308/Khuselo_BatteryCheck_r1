@@ -17,16 +17,23 @@ body {
   margin-bottom: 60px;
 }
 
+.searchbtn{
+
+}
+searchbtn:hover{
+    background-color:black;
+}
+
+
 .underlineKhuselo1 {
     font-size: x-large;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif border-bottom-color: orange;
     color:black;
-    border-bottom-width: 5px;
+    
     border-bottom: double;
     border-bottom-color:orange;
-    padding:5px;
-    padding-left:10px;
-    padding-right:10px;
+    padding:10px;
+    
     border-bottom-width: thick;
     border-bottom-style: double;
     transition-duration: 2s;
@@ -85,14 +92,18 @@ transition-duration:2s;
 }
 
 a:hover {
-padding:10px;
+    padding-left:5px;
+    padding-right:5px;
 border-radius:10px;
 background-color:dimgray;
-transition-duration:1s;
+
+transition-duration:2s;
+
 
 
 }
-.a {
+a {
+    padding:10px;
 transition-duration:2s;
 }
 .ul {
