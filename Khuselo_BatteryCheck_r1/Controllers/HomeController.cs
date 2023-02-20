@@ -6,7 +6,7 @@ using System.Diagnostics;
 
 namespace Khuselo_BatteryCheck_r1.Controllers
 {
-    [Authorize]
+    //[Authorize]
     public class HomeController : Controller
     {
        

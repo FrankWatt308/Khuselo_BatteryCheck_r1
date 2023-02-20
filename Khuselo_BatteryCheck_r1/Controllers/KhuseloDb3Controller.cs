@@ -10,7 +10,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace Khuselo_BatteryCheck_r1.Controllers
 {
-    [Authorize]
+    //[Authorize]
     public class KhuseloDb3Controller : Controller
     {
 
